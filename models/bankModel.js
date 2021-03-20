@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
+//const Schema = mongoose.Schema;
+
 const bankSchema = new Schema({
   name: String,
   branch: String,
   location: String,
   phone: String,
   address: String,
-  accountNumber: Number,
+  accounts: [{ type: Schema.Types.ObjectId, ref: "Account" }],
 });
 const BankModel = mongoose.model("Bank", bankSchema);
 

@@ -8,7 +8,7 @@ const {
   handleUpdateBank,
 } = require("../controllers/bankController");
 
-router.get("/bank", handleGetBank);
+router.get("/bank/:id?", handleGetBank);
 router.post("/bank", handlePostBank);
 router.put("/bank", handleUpdateBank);
 router.delete("/bank", handleDeleteBank);
